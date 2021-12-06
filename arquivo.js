@@ -2,6 +2,8 @@ const conteiner = document.getElementById('conteiner');
 const numeros_pokemon = 150;
 
 
+
+
 const fetch_pokemons = async () => {
     for (let i = 1; i <= numeros_pokemon; i++) {
         await pegarPokemon(i);
@@ -22,14 +24,15 @@ function criarpokemonCard(pokemon) {
     const item_Pokemon = document.createElement('div');
     item_Pokemon.classList.add('pokemon');
 
-    const poke_types = pokemon.types.map(el => el.type.nome )
-    // const type = 
+    const poke_types = pokemon.types.map(el => el.type.name)
+
     const nome = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
 
     const pokeInnerHTML = `
         <div class="info">
             <h3 class="number">Pokémon Nº: ${pokemon.id}</h3>
             <img class="img-container" src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
+            <p>${poke_types}<p>
            <h2 class="name">${pokemon.name}</h2>
         </div>
     `;
@@ -38,4 +41,5 @@ function criarpokemonCard(pokemon) {
 
     conteiner.appendChild(item_Pokemon);
 }
+
 
