@@ -1,5 +1,6 @@
 body {
     background-color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #conteiner {
@@ -14,7 +15,7 @@ body {
     padding: 15px;
     width: 200px;
     height: 300px;
-    margin: 0 auto;
+   margin: 20px auto;
     
    
 }
@@ -26,7 +27,14 @@ body {
     border-radius: 20px;
     text-align: center;
     box-shadow: 0px 0px 10px black;
+   
     
+}
+
+.info:hover {
+    width: 230px;
+    height: 330px;
+    background-color: white;
 }
 
 .info > p {
@@ -47,7 +55,32 @@ nav {
     color: white;
     border-top: 5px solid black;
     border-bottom: 5px solid black;
+    display: flex;
+}
 
+nav ul {
+    display: flex;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:black;
+    background-color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+
+nav ul li a:hover {
+    padding: 15px;
+    border: 2px solid black
 }
 
 header {
@@ -62,7 +95,9 @@ header {
 
 .name {
     background-image: linear-gradient(to right, red ,transparent);
-    padding: 5px;
     border-radius: 10px;
 }
 
+.number {
+    padding-top: 10px;
+}
