@@ -11,7 +11,7 @@ const fetch_pokemons = async () => {
 const pegarPokemon = async id => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const res = await fetch(url);
-    const pokemon = res.json();
+    const pokemon = await res.json();
     criarpokemonCard(pokemon);
     
 }
@@ -22,8 +22,16 @@ function criarpokemonCard(pokemon) {
     const item_Pokemon = document.createElement('div');
     item_Pokemon.classList.add('pokemon');
 
+    const poke_types = pokemon.types.map(el => el.type.nome )
+    // const type = 
+    const nome = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
+
     const pokeInnerHTML = `
-        ${pokemon.id} 
+        <div class="info">
+            <h3 class="number">${pokemon.id}</h3>
+            <img class="img-container" src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
+           <h2 class="name">${pokemon.name}</h2>
+        </div>
     `;
 
     item_Pokemon.innerHTML = pokeInnerHTML;
